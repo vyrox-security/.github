@@ -1,0 +1,64 @@
+name: Feature Request
+description: You want Vyrox to do something it does not currently do. Great. Tell us the problem first, not the solution.
+labels: ["enhancement", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The most useful feature requests describe a problem you are actually
+        experiencing, not a solution you have already designed. We reserve the
+        right to solve the problem differently than you proposed. If your
+        request is "add an unsafe block to the Rust proxy for performance",
+        the answer is no.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What are you trying to do that you cannot currently do?
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-workaround
+    attributes:
+      label: Current workaround
+      description: How are you handling this today? "I am not" is a valid answer.
+    validations:
+      required: false
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed solution (optional)
+      description: If you have a specific implementation in mind, describe it. If it touches the HMAC verification or action dispatcher, explain why the security tradeoffs are acceptable.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Which component does this affect?
+      options:
+        - Ingestion webhook
+        - Triage pipeline
+        - Heuristics engine
+        - Slack bot
+        - Rust proxy
+        - Audit log
+        - Simulator
+        - Documentation
+        - New component entirely
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: How blocked are you without this?
+      options:
+        - Completely blocked, cannot use Vyrox for my use case
+        - Significantly inconvenienced but have a workaround
+        - Quality-of-life improvement only
+    validations:
+      required: true

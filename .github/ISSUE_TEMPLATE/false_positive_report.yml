@@ -1,0 +1,64 @@
+name: False Positive or False Negative Report
+description: Vyrox triaged an alert incorrectly. This is the most important category of feedback we receive.
+labels: ["false-positive", "triage-quality"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A false positive means Vyrox flagged something as CRITICAL or HIGH that
+        was benign. A false negative means Vyrox classified a real threat as
+        MEDIUM, LOW, or BENIGN. Both matter. False negatives matter more.
+        Redact all hostnames, usernames, and process paths before submitting.
+        Do not include real alert data from a production environment.
+
+  - type: dropdown
+    id: fp-or-fn
+    attributes:
+      label: Type of misclassification
+      options:
+        - False positive (Vyrox flagged benign activity as malicious)
+        - False negative (Vyrox missed a real threat or underclassified it)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: stage
+    attributes:
+      label: Which stage produced the incorrect verdict?
+      options:
+        - Heuristics engine (Stage 1)
+        - LLM triage (Stage 2)
+        - Unsure
+    validations:
+      required: true
+
+  - type: textarea
+    id: alert-description
+    attributes:
+      label: Describe the alert (redacted)
+      description: Describe the alert type, event name, and context. Do not paste raw alert JSON. Summarise it in plain text with hostnames replaced by HOST-A, HOST-B, etc.
+    validations:
+      required: true
+
+  - type: textarea
+    id: verdict-received
+    attributes:
+      label: Verdict received from Vyrox
+      placeholder: "CRITICAL, confidence 0.91, via heuristics engine, pattern: mimikatz_lsass"
+    validations:
+      required: true
+
+  - type: textarea
+    id: correct-verdict
+    attributes:
+      label: What the correct verdict should have been
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Operational context
+      description: What was actually happening on the host at the time? "A sysadmin was running ProcDump for a legitimate memory dump" is exactly the kind of context that improves the engine.
+    validations:
+      required: false

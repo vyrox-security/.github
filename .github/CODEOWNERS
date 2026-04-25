@@ -1,0 +1,13 @@
+# CODEOWNERS defines required reviewers for matching paths.
+# Critical security control paths use proxy-maintainers ownership so changes
+# to HMAC verification, rate limiting, and action dispatch controls cannot
+# merge without reviewers who own those threat boundaries.
+
+* @vyrox-security/core
+*.rs @vyrox-security/proxy-maintainers
+.github/workflows/ @vyrox-security/core
+SECURITY.md @vyrox-security/core
+.github/ISSUE_TEMPLATE/ @vyrox-security/core
+src/hmac_verify* @vyrox-security/proxy-maintainers
+src/rate_limiter* @vyrox-security/proxy-maintainers
+src/action_dispatcher* @vyrox-security/proxy-maintainers
