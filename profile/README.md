@@ -23,6 +23,8 @@ The open-core model is deliberate. The code that directly touches EDR execution 
 
 ## Contact
 
-Security vulnerabilities: security@vyrox.security
+Website: vyrox.dev (coming soon)
+
+Security vulnerabilities: sec.vyrox@proton.me
 
 Everything else: open an issue in the relevant repository.

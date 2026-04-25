@@ -13,7 +13,7 @@ Versions prior to `v0.1.0-alpha` are not supported and should not be deployed.
 
 Do not open a public GitHub issue for security reports.
 
-Email: `security@vyrox.security`
+Email: `sec.vyrox@proton.me`
 
 Subject line format:
 
@@ -27,7 +27,7 @@ Response SLA:
 - Initial triage within 7 days
 - Patch timeline communicated within 14 days
 
-PGP key available at https://vyrox.security/.well-known/pgp-key.txt.
+PGP key available at https://vyrox.dev/.well-known/pgp-key.txt.
 
 ## Scope
 
