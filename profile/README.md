@@ -1,30 +1,63 @@
-![Ingest](https://img.shields.io/badge/stage-ingest-6a737d?style=flat-square)
-![Triage](https://img.shields.io/badge/stage-triage-6a737d?style=flat-square)
-![Approve](https://img.shields.io/badge/stage-approve-6a737d?style=flat-square)
-![Execute](https://img.shields.io/badge/stage-execute-6a737d?style=flat-square)
-![Alert Volume](https://img.shields.io/badge/alerts%2Fshift-300%2B-586069?style=flat-square)
+![Vyrox Security Banner](vyrox-security.png)
 
-Vyrox builds an autonomous AI SOC analyst that handles noisy alert queues before analysts lose another shift to false positives. The system ingests EDR alerts, applies deterministic heuristics first, escalates ambiguous cases to an LLM triage pass, routes high-risk decisions for human approval in Slack, and executes approved containment actions through a hardened Rust proxy.
+<p align="center">
+  <img src="https://img.shields.io/badge/status-alpha-red?style=for-the-badge" alt="Status">
+  <img src="https://img.shields.io/badge/containment-human%20approved%20only-black?style=for-the-badge" alt="Containment policy">
+  <img src="https://img.shields.io/badge/automation-judged%20by%20people%2C%20not%20mood-cyan?style=for-the-badge" alt="Automation policy">
+  <img src="https://img.shields.io/badge/alerts-processed%20with%20extreme%20suspicion-orange?style=for-the-badge" alt="Alerts policy">
+</p>
 
-The open-core model is deliberate. The code that directly touches EDR execution paths is public and MIT licensed so security teams can audit it under zero-trust assumptions. The private heuristics engine and internal orchestration layers remain proprietary because they encode the operating logic that differentiates signal from noise.
+<p align="center">
+</p>
 
-| Repository | What it is | Licence |
-| --- | --- | --- |
-| `vyrox-proxy` | Rust containment proxy with HMAC verification, rate limits, and audit logging | MIT |
-| `vyrox-docs` | Architecture, API references, and security design documentation | Proprietary |
-| `vyrox-simulator` | Alert simulation scripts for integration and demo flows | Proprietary |
-| `vyrox-landing` | Public website and product narrative | Proprietary |
+## What It Does
+Vyrox is the slightly overcaffeinated AI SOC analyst that reads the alert queue, squints at it, and then asks a human before touching anything dangerous.
 
-## The Design Philosophy
+```
+[EDR Alert] --> [Ingest] --> [Heuristics] --> [LLM triage] --> [Human Approval] --> [Action]
+```
 
-1. The proxy is public because trust starts where side effects start. If code can isolate a host, customers should be able to read it.
-2. The heuristics are private because detection logic is the moat. Publishing every pattern makes adversary tuning easier.
-3. SQLite is intentional for alpha because operational simplicity is a security property when teams are small and pager budgets are smaller.
+1. **Ingest** - CrowdStrike and SentinelOne webhooks arrive like they pay rent here.
+2. **Triage** - Deterministic heuristics handle most of the obvious nonsense.
+3. **Escalate** - Ambiguous cases get a second opinion from the LLM.
+4. **Approve** - HIGH/CRITICAL alerts surface with enough context to make a sane decision.
+5. **Execute** - Approved actions hit the hardened Rust proxy, because chaos deserves guardrails.
 
-## Contact
+The important bit: **no autonomous containment**. Humans approve before anything gets isolated, killed, or dramatically overreacted to.
 
-Website: vyrox.dev (coming soon)
+## Repositories
 
-Security vulnerabilities: sec.vyrox@proton.me
+| Repo | Description | License | Stars |
+|------|-------------|---------|-------|
+| [vyrox-proxy](https://github.com/vyrox-security/vyrox-proxy) | Rust containment proxy for the important kind of panic | MIT | ![vyrox-proxy stars](https://img.shields.io/github/stars/vyrox-security/vyrox-proxy?style=flat-square) |
+| [vyrox-docs](https://github.com/vyrox-security/vyrox-docs) | Architecture docs for the stuff everyone pretends not to read | Proprietary | ![vyrox-docs stars](https://img.shields.io/github/stars/vyrox-security/vyrox-docs?style=flat-square) |
+| [vyrox-simulator](https://github.com/vyrox-security/vyrox-simulator) | Alert simulation, because production is a terrible place to improvise | Proprietary | ![vyrox-simulator stars](https://img.shields.io/github/stars/vyrox-security/vyrox-simulator?style=flat-square) |
+| [vyrox-landing](https://github.com/vyrox-security/vyrox-landing) | Public marketing site with just enough polish to be dangerous | Proprietary | ![vyrox-landing stars](https://img.shields.io/github/stars/vyrox-security/vyrox-landing?style=flat-square) |
 
-Everything else: open an issue in the relevant repository.
+## Why Open Core
+
+The proxy is MIT because if software can isolate a production host, the public should at least be able to audit the melodrama.
+
+The heuristics stay proprietary because that is the actual product, and shipping detection logic publicly would be a very generous gift to the other team.
+
+## Quick Links
+
+- Website: [vyrox.dev](https://vyrox.dev)
+- Security issues: sec.vyrox@proton.me
+- PGP key: [vyrox.dev/.well-known/pgp-key.txt](https://vyrox.dev/.well-known/pgp-key.txt)
+- Report vulnerabilities: [SECURITY.md](https://github.com/vyrox-security/.github/blob/main/SECURITY.md)
+
+## Status
+
+Alpha. Breaking things. Moving fast. Wearing a hard hat.
+
+## Contributors
+
+<!-- contributors start -->
+<!-- This section is auto-generated by the update-contributors workflow -->
+<!-- Do not edit manually - changes will be overwritten -->
+<!-- contributors end -->
+
+---
+
+Built for analysts who deserve real signal, not 300 false positives per shift.

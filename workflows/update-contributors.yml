@@ -31,12 +31,35 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: python scripts/generate_contributors.py
 
+      - name: Update profile README with contributors
+        run: |
+          python -c "
+          import re
+
+          # Read the generated contributors
+          with open('contributors.md', 'r') as f:
+              contributors = f.read()
+
+          # Read the profile README
+          with open('profile/README.md', 'r') as f:
+              readme = f.read()
+
+          # Replace the markers with actual contributors
+          pattern = r'<!-- contributors start -->.*<!-- contributors end -->'
+          replacement = f'<!-- contributors start -->\n{contributors}\n<!-- contributors end -->'
+          updated = re.sub(pattern, replacement, readme, flags=re.DOTALL)
+
+          # Write back
+          with open('profile/README.md', 'w') as f:
+              f.write(updated)
+          "
+
       - name: Commit and push if changed
         run: |
-          if [[ -n $(git status -s contributors.md) ]]; then
+          if [[ -n $(git status -s profile/README.md) ]]; then
             git config user.name "github-actions[bot]"
             git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add contributors.md
+            git add profile/README.md
             git commit -m "Update contributor list"
             git push
           fi
