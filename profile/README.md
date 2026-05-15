@@ -51,7 +51,6 @@ The heuristics stay proprietary because that is the actual product, and shipping
 
 Alpha. Breaking things. Moving fast. Wearing a hard hat.
 
-## Contributors
 
 <!-- contributors start -->
 ## Contributors
