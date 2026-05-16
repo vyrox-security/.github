@@ -43,7 +43,7 @@ body:
         - Ingestion webhook
         - Triage pipeline
         - Heuristics engine
-        - Slack bot
+        - Discord bot
         - Rust proxy
         - Audit log
         - Simulator

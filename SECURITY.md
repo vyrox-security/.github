@@ -43,7 +43,7 @@ In scope:
 Out of scope:
 
 - OpenRouter free-tier model hallucinating a verdict
-- Slack bot UI quality complaints
+- Discord bot UI quality complaints
 - Any scenario requiring physical server access
 
 ## Disclosure Policy

@@ -40,7 +40,7 @@ Required for PRs touching ingestion, worker, proxy, or code that calls EDR APIs.
 
 ## Breaking changes
 
-State explicitly whether this changes the webhook contract, Slack action payload format, or proxy API.
+State explicitly whether this changes the webhook contract, Discord action payload format, or proxy API.
 
 ## Linked issues
 

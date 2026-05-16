@@ -48,7 +48,7 @@ body:
       options:
         - Ingestion webhook (FastAPI)
         - AI worker / triage pipeline
-        - Slack bot
+        - Discord bot
         - Rust proxy
         - Simulator scripts
         - Documentation
