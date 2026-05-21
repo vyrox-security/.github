@@ -43,7 +43,7 @@ The heuristics stay proprietary because that is the actual product, and shipping
 ## Quick Links
 
 - Website: [vyrox.dev](https://vyrox.dev)
-- Security issues: sec.vyrox@proton.me
+- Security issues: vyrox.sec@proton.me
 - PGP key: [vyrox.dev/.well-known/pgp-key.txt](https://vyrox.dev/.well-known/pgp-key.txt)
 - Report vulnerabilities: [SECURITY.md](https://github.com/vyrox-security/.github/blob/main/SECURITY.md)
 
