@@ -57,9 +57,10 @@ Alpha. Breaking things. Moving fast. Wearing a hard hat.
 <!-- auto-generated; do not edit -->
 <table><tr>
   <td align="center"><a href="https://github.com/keirsalterego"><img src="https://avatars.githubusercontent.com/u/121482214?v=4&s=80" width="80px;" alt="keirsalterego"/><br /><sub><b>keirsalterego</b></sub></a></td>
+  <td align="center"><a href="https://github.com/starkalterego"><img src="https://avatars.githubusercontent.com/u/178389306?v=4&s=80" width="80px;" alt="starkalterego"/><br /><sub><b>starkalterego</b></sub></a></td>
 </tr></table>
 
-<sub>Total unique contributors: 1</sub>
+<sub>Total unique contributors: 2</sub>
 
 <!-- contributors end -->
 
