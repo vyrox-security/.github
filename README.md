@@ -2,7 +2,7 @@
 
 ![Licence](https://img.shields.io/badge/licence-proprietary-lightgrey?style=flat-square)
 ![Build](https://img.shields.io/badge/build-passing-2ea44f?style=flat-square)
-![Version](https://img.shields.io/badge/version-v0.1.0--alpha-005cc5?style=flat-square)
+![Version](https://img.shields.io/badge/version-v0.1.0-005cc5?style=flat-square)
 ![Platform](https://img.shields.io/badge/platform-github-24292f?style=flat-square)
 ![Funny](https://img.shields.io/badge/incidents-preferably%20in%20daylight-6a737d?style=flat-square)
 
