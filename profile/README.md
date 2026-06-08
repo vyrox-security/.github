@@ -11,19 +11,20 @@
 </p>
 
 ## What It Does
-Vyrox is the slightly overcaffeinated AI SOC analyst that reads the alert queue, squints at it, and then asks a human before touching anything dangerous.
+Vyrox is the action layer that sits between your EDR and your team. It reads the alert queue, squints at it, acts on the real threats, and writes down exactly what it did so you can prove it later. It still asks a human before touching anything dangerous.
 
 ```
-[EDR Alert] --> [Ingest] --> [Heuristics] --> [LLM triage] --> [Human Approval] --> [Action]
+[EDR Alert] --> [Ingest] --> [Heuristics] --> [LLM triage] --> [Human Approval] --> [Action] --> [Audit]
 ```
 
-1. **Ingest** - CrowdStrike and SentinelOne webhooks arrive like they pay rent here.
+1. **Ingest** - CrowdStrike, SentinelOne, Microsoft Defender, and a generic JSON adapter all arrive like they pay rent here.
 2. **Triage** - Deterministic heuristics handle most of the obvious nonsense.
 3. **Escalate** - Ambiguous cases get a second opinion from the LLM.
 4. **Approve** - HIGH/CRITICAL alerts surface with enough context to make a sane decision.
 5. **Execute** - Approved actions hit the hardened Rust proxy, because chaos deserves guardrails.
+6. **Prove** - Every action lands in a SHA-256 hash-chained, tamper-evident audit log you own. The boring slide that wins the audit.
 
-The important bit: **no autonomous containment**. Humans approve before anything gets isolated, killed, or dramatically overreacted to.
+The important bit: **no autonomous containment** today. A human approves before anything gets isolated, killed, or dramatically overreacted to. Autonomy is opt-in and on the roadmap, never a default.
 
 ## Repositories
 
@@ -43,13 +44,15 @@ The heuristics stay proprietary because that is the actual product, and shipping
 ## Quick Links
 
 - Website: [vyrox.dev](https://vyrox.dev)
-- Security issues: sec.vyrox@proton.me
+- Security issues: security@vyrox.dev
 - PGP key: [vyrox.dev/.well-known/pgp-key.txt](https://vyrox.dev/.well-known/pgp-key.txt)
 - Report vulnerabilities: [SECURITY.md](https://github.com/vyrox-security/.github/blob/main/SECURITY.md)
 
 ## Status
 
 Alpha. Breaking things. Moving fast. Wearing a hard hat.
+
+Recently shipped: multi-EDR ingestion (CrowdStrike, SentinelOne, Microsoft Defender, generic JSON), a SHA-256 hash-chained tamper-evident audit log, and an MIT-licensed Rust containment proxy you can read in an afternoon.
 
 
 <!-- contributors start -->
