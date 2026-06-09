@@ -22,4 +22,4 @@ This organisation builds software that can trigger containment actions on produc
 
 Maintainers may edit, lock, or remove content and restrict participation when conduct degrades the safety or usefulness of the project.
 
-For security-sensitive concerns, contact security@vyrox.security.
+For security-sensitive concerns, contact security@vyrox.dev.

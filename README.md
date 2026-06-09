@@ -4,7 +4,6 @@
 ![Build](https://img.shields.io/badge/build-passing-2ea44f?style=flat-square)
 ![Version](https://img.shields.io/badge/version-v0.1.0-005cc5?style=flat-square)
 ![Platform](https://img.shields.io/badge/platform-github-24292f?style=flat-square)
-![Funny](https://img.shields.io/badge/incidents-preferably%20in%20daylight-6a737d?style=flat-square)
 
 This repository holds the shared policy, templates, and workflow guardrails used across the public Vyrox repositories, so every bug report, pull request, and security disclosure lands in a format maintainers can actually act on. It exists separately because organisation-wide community health files should have one owner, one history, and one place to audit, especially when the broader product uses an open-core model where public trust is anchored in what security teams can inspect before they let code near production systems.
 
@@ -90,4 +89,4 @@ See CONTRIBUTING.md for full contribution process, style expectations, and merge
 
 This repository is distributed under Vyrox organisation terms for public community files. See LICENCE in the relevant target repository for component-specific licence terms.
 
-Website: vyrox.dev (coming soon)
+Website: [vyrox.dev](https://vyrox.dev) · General: hello@vyrox.dev · Security: security@vyrox.dev
