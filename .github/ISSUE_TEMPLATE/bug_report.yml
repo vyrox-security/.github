@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Before filing: check that this is not a known limitation documented in SECURITY.md. If the bug involves a security vulnerability, do not file here. Email security@vyrox.security instead.
+        Before filing: check that this is not a known limitation documented in SECURITY.md. If the bug involves a security vulnerability, do not file here. Email security@vyrox.dev instead.
 
   - type: textarea
     id: what-happened
@@ -72,5 +72,5 @@ body:
           required: true
         - label: I have redacted all secrets and tenant data from this report.
           required: true
-        - label: This is not a security vulnerability. If it is, I will email security@vyrox.security instead.
+        - label: This is not a security vulnerability. If it is, I will email security@vyrox.dev instead.
           required: true

@@ -13,7 +13,7 @@ Versions prior to `v0.1.0` are not supported and should not be deployed.
 
 Do not open a public GitHub issue for security reports.
 
-Email: `sec.vyrox@proton.me`
+Email: `security@vyrox.dev`
 
 Subject line format:
 
@@ -42,8 +42,8 @@ In scope:
 
 Out of scope:
 
-- OpenRouter free-tier model hallucinating a verdict
-- Discord bot UI quality complaints
+- The LLM model returning a low-quality verdict (this is a triage-quality matter, not a vulnerability)
+- Notifier UI quality complaints
 - Any scenario requiring physical server access
 
 ## Disclosure Policy
@@ -54,7 +54,7 @@ There are no bounty payouts during alpha.
 
 ## Known Limitations
 
-- OpenRouter free tier has a 20k token/day cap. This is an operational constraint.
-- SQLite single-writer behavior is not suitable above roughly 50k alerts/day per tenant.
+- The LLM triage path runs under a configurable daily token budget; once it is exhausted, alerts fall back to a conservative deterministic verdict.
+- The pilot single-writer datastore is not sized for sustained very-high alert volume per tenant; the platform moves to a horizontally scalable store before that becomes a constraint.
 
 These are known system limits, not security vulnerabilities.
