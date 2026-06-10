@@ -32,14 +32,14 @@ The important bit: **no autonomous containment** today. A human approves before 
 |------|-------------|---------|-------|
 | [vyrox-proxy](https://github.com/vyrox-security/vyrox-proxy) | Rust containment proxy for the important kind of panic | MIT | ![vyrox-proxy stars](https://img.shields.io/github/stars/vyrox-security/vyrox-proxy?style=flat-square) |
 | [vyrox-docs](https://github.com/vyrox-security/vyrox-docs) | Architecture docs for the stuff everyone pretends not to read | Proprietary | ![vyrox-docs stars](https://img.shields.io/github/stars/vyrox-security/vyrox-docs?style=flat-square) |
-| [vyrox-simulator](https://github.com/vyrox-security/vyrox-simulator) | Alert simulation, because production is a terrible place to improvise | Proprietary | ![vyrox-simulator stars](https://img.shields.io/github/stars/vyrox-security/vyrox-simulator?style=flat-square) |
+| [vyrox-simulator](https://github.com/vyrox-security/vyrox-simulator) | Alert simulation, because production is a terrible place to improvise | MIT | ![vyrox-simulator stars](https://img.shields.io/github/stars/vyrox-security/vyrox-simulator?style=flat-square) |
 | [vyrox-landing](https://github.com/vyrox-security/vyrox-landing) | Public marketing site with just enough polish to be dangerous | Proprietary | ![vyrox-landing stars](https://img.shields.io/github/stars/vyrox-security/vyrox-landing?style=flat-square) |
 
 ## Why Open Core
 
 The proxy is MIT because if software can isolate a production host, the public should at least be able to audit the melodrama.
 
-The heuristics stay proprietary because that is the actual product, and shipping detection logic publicly would be a very generous gift to the other team.
+The heuristics stay proprietary because shipping detection logic publicly would be a very generous gift to the other team. The thing customers actually buy is the part you CAN inspect: the action layer and the tamper-evident record it leaves behind.
 
 ## Quick Links
 
